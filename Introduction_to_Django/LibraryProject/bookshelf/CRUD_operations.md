@@ -5,7 +5,7 @@ This document captures all CRUD (Create, Retrieve, Update, Delete) operations pe
 ---
 
 ## CREATE
->>> from app_name.models import Book
+>>> from bookshelf.models import Book
 >>> book = Book.objects.create(title="1984", author="George Orwell", publication_year=1949)
 >>> book
 
@@ -15,7 +15,7 @@ This document captures all CRUD (Create, Retrieve, Update, Delete) operations pe
 ---
 
 ## RETRIEVE
->>> from app_name.models import Book
+>>> from bookshelf.models import Book
 >>> book = Book.objects.get(id=1)
 >>> book.title
 >>> book.author
@@ -40,10 +40,11 @@ This document captures all CRUD (Create, Retrieve, Update, Delete) operations pe
 ---
 
 ## DELETE
+from bookshelf.models import Book
 >>> book = Book.objects.get(id=1)
 >>> book.delete()
 >>> Book.objects.all()
 
-(1, {'app_name.Book': 1})
+(1, {'bookshelf.Book': 1})
 <QuerySet []>
 # The Book instance was successfully deleted, confirmed by an empty QuerySet.
