@@ -25,4 +25,5 @@ def log_out(request):
     return render(request, 'relationship_app/logout.html')
 
 def register(request):
+    UserCreationForm()
     return render(request, 'relationship_app/register.html')
