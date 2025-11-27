@@ -6,27 +6,27 @@ from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnl
 
 # Set of generic views for the Book model that handles CRUD operations.
 
-class BookList(ListAPIView):
+class BookListView(ListAPIView):
     query_set = Book.objects.all()
     serializer_class = BookSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
-class BookDetail(RetrieveAPIView):
+class BookDetailView(RetrieveAPIView):
     query_set = Book.objects.all()
     serializer_class = BookSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
-class BookCreate(CreateAPIView):
+class BookCreateView(CreateAPIView):
     query_set = Book.objects.all()
     serializer_class = BookSerializer
     permission_classes = [IsAuthenticated]
 
-class BookUpdate(UpdateAPIView):
+class BookUpdateView(UpdateAPIView):
     query_set = Book.objects.all()
     serializer_class = BookSerializer
     permission_classes = [IsAuthenticated]
 
-class BookDelete(DestroyAPIView):
+class BookDeleteView(DestroyAPIView):
     query_set = Book.objects.all()
     serializer_class = BookSerializer
     permission_classes = [IsAuthenticated]
