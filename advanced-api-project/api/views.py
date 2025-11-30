@@ -16,8 +16,8 @@ class BookListView(ListAPIView):
     permission_classes = [IsAuthenticatedOrReadOnly]
     filter_backends = [
             DjangoFilterBackend,
-            filter.SearchFilter,
-            filter.OrderingFilter
+            filters.SearchFilter,
+            filters.OrderingFilter
             ]
     filterset_fields = ['title', 'author', 'publication_yeat']
     search_fields = ['title', 'author']
